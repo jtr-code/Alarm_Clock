@@ -6,6 +6,7 @@ function currentTime() {
     let session = "AM";
 
 //12-Hour format
+    
     if (hh == 0) {
         hh = 12;
     }
