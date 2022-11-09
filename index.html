@@ -24,15 +24,21 @@
     <div class="alarmsection">
         <form class="create-alarm">
 
-            <input type="number" name="sethour" placeholder="hour" min="0" max="12" id="sethour">
-            <input type="number" name="setminute" placeholder="minute" min="0" max="59" id="setminute">
-            <input type="number" name="setsecond" placeholder="second" min="0" max="59" id="setsecond">
-
+            <input type="number" title="Set Your Alarm Hour" name="sethour" placeholder="hour" min="0" max="12"
+                id="sethour">
+            <input type="number" title="Set Your Alarm Minutes" name="setminute" placeholder="minute" min="0" max="59"
+                id="setminute">
+            <input type="number" title="Set Your Alarm Seconds" name="setsecond" placeholder="second" min="0" max="59"
+                id="setsecond">
+            <select name="zone" required class="zone">
+                <option value="AM">AM</option>
+                <option value="PM">PM</option>
+            </select>
             <button class="setbtn">Set Alarm</button>
             <button class="stopbtn">Stop Alarm</button>
         </form>
     </div>
-    
+
 
     <script src="script.js"></script>
 </body>
