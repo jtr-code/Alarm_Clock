@@ -17,20 +17,23 @@ function currentTime() {
     mm = (mm < 10) ? "0" + mm : mm;
     ss = (ss < 10) ? "0" + ss : ss;
 
-    let time = hh + ":" + mm + ":" + ss + " " + session;
 
-    document.getElementById("clock").innerText = time;
-    let t = setTimeout(function () { currentTime() }, 1000);
+    document.getElementById('hour').innerHTML = hh;
+    document.getElementById('minute').innerHTML = mm;
+    document.getElementById('second').innerHTML = ss;
+    document.getElementById('session').innerHTML = session; 
+   
 }
-currentTime();
+setInterval(currentTime,1000)
+
 
 function audioPlay() {
     setTimeout(() => {
-        let audio =new Audio('audio.mp3');
+        let audio = new Audio('audio.mp3');
         audio.play();
-        
+
     }, 2000);
-    
+
 
 }
 audioPlay();
