@@ -21,18 +21,58 @@ body {
   transform: translate(-50%, -50%);
   background-color: rgb(255, 248, 248);
   font-weight: 540;
-  font-family: monospace
- 
+  font-family: monospace;
 }
 
 .alarmsection {
-  
+
   margin-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 110vh;
+  padding-top: 400px;
 
+}
+
+input[type='number'] {
+  width: 80px;
+  font-family: "JetBrains Mono", monospace;
+  cursor: pointer;
+  text-align: center;
+  outline-color: rgb(16, 16, 245);
+  border-radius: 9px;
+  font-size: large;
+
+}
+
+input[type='number']:hover {
+
+  background: whitesmoke;
+  box-shadow: 0 0 10px rgb(113, 129, 247), 0 0 40px rgb(107, 123, 240), 0 0 80px rgb(82, 97, 235);
+  transition: 0.4s ease-in-out;
+  border-radius: 25px;
+
+}
+
+.zone {
+
+  width: 80px;
+  font-family: "JetBrains Mono", monospace;
+  cursor: pointer;
+  text-align: center;
+  outline-color: rgb(16, 16, 245);
+  border-radius: 9px;
+  font-size: large;
+
+
+
+}
+
+.zone:hover {
+
+  box-shadow: 0 0 10px rgb(113, 129, 247), 0 0 40px rgb(107, 123, 240), 0 0 80px rgb(82, 97, 235);
+  transition: 0.4s ease-in-out;
+  border-radius: 25px;
 }
 
 
