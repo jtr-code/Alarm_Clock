@@ -10,13 +10,29 @@
 </head>
 
 <body>
-    <div class="clock">
-        <div id="hour">00<span>:</span></div>
-        <div id="minute">00<span>:</span></div>
-        <div id="second">00<span>:</span></div>
-        <div id="session">AM</div>
 
+    <div class="clockDisplay">
+        <div id="hour"></div>
+        <span>:</span>
+        <div id="minute"></div>
+        <span>:</span>
+        <div id="second"></div>
+        <span>:</span>
+        <div id="session"></div>
     </div>
+
+    <div class="alarmsection">
+        <form class="create-alarm">
+
+            <input type="number" name="sethour" placeholder="hour" min="0" max="12" id="sethour">
+            <input type="number" name="setminute" placeholder="minute" min="0" max="59" id="setminute">
+            <input type="number" name="setsecond" placeholder="second" min="0" max="59" id="setsecond">
+
+            <button class="setbtn">Set Alarm</button>
+            <button class="stopbtn">Stop Alarm</button>
+        </form>
+    </div>
+    
 
     <script src="script.js"></script>
 </body>

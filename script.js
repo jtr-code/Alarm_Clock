@@ -5,6 +5,7 @@ function currentTime() {
     let ss = date.getSeconds();
     let session = "AM";
 
+//12-Hour format
     if (hh == 0) {
         hh = 12;
     }
@@ -17,23 +18,23 @@ function currentTime() {
     mm = (mm < 10) ? "0" + mm : mm;
     ss = (ss < 10) ? "0" + ss : ss;
 
-
     document.getElementById('hour').innerHTML = hh;
     document.getElementById('minute').innerHTML = mm;
     document.getElementById('second').innerHTML = ss;
-    document.getElementById('session').innerHTML = session; 
-   
+    document.getElementById('session').innerHTML = session;
+
 }
-setInterval(currentTime,1000)
+setInterval(currentTime, 1000);
 
 
 function audioPlay() {
     setTimeout(() => {
         let audio = new Audio('audio.mp3');
+        audio.loop = true;
         audio.play();
 
-    }, 2000);
+    }, 1000);
 
 
 }
-audioPlay();
+// audioPlay();
