@@ -1,4 +1,4 @@
-* {
+/* * {
 
   margin: 0;
   padding: 0;
@@ -181,4 +181,41 @@ input[type='number']:hover {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 
+} */
+
+body {
+  font-family: monaco;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#current-time {
+  font-size: 32px;
+}
+#current-time,
+.create-alarm,
+h1,
+#active-alarm {
+  text-align: center;
+}
+.create-alarm,
+.alarm-inputs,
+#active-alarm {
+  margin-top: 20px;
+}
+input {
+  width: 100px;
+  height: 30px;
+}
+.alarm-inputs,
+#alarm-text {
+  margin-bottom: 30px;
+}
+button {
+  font-size: 18px;
+}
+#active-alarm {
+  display: none;
 }
