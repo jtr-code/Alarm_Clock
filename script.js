@@ -60,6 +60,7 @@ const checkAlarm = (timeString) => {
     if (alarmString === timeString) {
 
         alarmAudio.play();
+        alarmAudio.loop = true;
     }
 };
 
