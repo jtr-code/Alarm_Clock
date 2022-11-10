@@ -1,44 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alarm Clock</title>
+    <title>Parcel Sandbox</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-    <div class="clockDisplay">
-        <div id="hour"></div>
-        <span>:</span>
-        <div id="minute"></div>
-        <span>:</span>
-        <div id="second"></div>
-        <span>:</span>
-        <div id="session"></div>
+    <div id="app">
+        <h1>Current Time</h1>
+        <div id="current-time"></div>
+        <div class="create-alarm">
+            <div>Set Alarm</div>
+            <div class="form-actions">
+                <form>
+                    <div class="alarm-inputs">
+                        <input type="number" name="hour" placeholder="Enter hours" min="0" max="12" required />
+                        <input type="number" name="min" min="0" max="60" placeholder="Enter minutes" required />
+                        <input type="number" name="sec" min="0" max="60" placeholder="Enter seconds" required />
+                        <select name="zone" required>
+                            <option value="" selected disabled>Zone</option>
+                            <option value="AM">AM</option>
+                            <option value="PM">PM</option>
+                        </select>
+                    </div>
+                    <button>Submit</button>
+                </form>
+            </div>
+        </div>
     </div>
-
-    <div class="alarmsection">
-        <form class="create-alarm">
-
-            <input type="number" title="Set Your Alarm Hour" name="sethour" placeholder="hour" min="0" max="12"
-                id="sethour">
-            <input type="number" title="Set Your Alarm Minutes" name="setminute" placeholder="minute" min="0" max="59"
-                id="setminute">
-            <input type="number" title="Set Your Alarm Seconds" name="setsecond" placeholder="second" min="0" max="59"
-                id="setsecond">
-            <select name="zone" required class="zone">
-                <option value="AM">AM</option>
-                <option value="PM">PM</option>
-            </select>
-            <button class="setbtn">Set Alarm</button>
-            <button class="stopbtn">Stop Alarm</button>
-        </form>
+    <div id="active-alarm">
+        <div id="alarm-text"></div>
+        <button id="clear-alarm">Clear Alarm</button>
     </div>
-
 
     <script src="script.js"></script>
 </body>
