@@ -1,221 +1,150 @@
-/* * {
+ * {
 
-  margin: 0;
-  padding: 0;
-}
+   margin: 0;
+   padding: 0;
+ }
 
-body {
+ body {
 
-  background-color: rgb(145, 155, 233);
+   background-color: rgb(145, 155, 233);
+   font-family: "JetBrains Mono", monospace;
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+ }
 
-}
+ #current-time {
 
-.clockDisplay {
+   font-size: 80px;
+   background-color: #FCFCFD;
+   border-radius: 25px;
+ }
 
-  font-size: 100px;
-  border-radius: 29px;
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgb(255, 248, 248);
-  font-weight: 540;
-  font-family: monospace;
-}
+ #current-time,
+ .create-alarm,
+ h1,
+ #active-alarm {
 
-.alarmsection {
+   text-align: center;
 
-  margin-top: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 400px;
+ }
 
-}
+ .create-alarm,
+ .alarm-inputs,
+ #active-alarm {
 
-input[type='number'] {
-  width: 80px;
-  font-family: "JetBrains Mono", monospace;
-  cursor: pointer;
-  text-align: center;
-  outline-color: rgb(16, 16, 245);
-  border-radius: 9px;
-  font-size: large;
+   margin-top: 20px;
+ }
 
-}
+ input {
 
-input[type='number']:hover {
+   width: 100px;
+   height: 30px;
+ }
 
-  background: whitesmoke;
-  box-shadow: 0 0 10px rgb(113, 129, 247), 0 0 40px rgb(107, 123, 240), 0 0 80px rgb(82, 97, 235);
-  transition: 0.4s ease-in-out;
-  border-radius: 25px;
+ button {
 
-}
+   align-items: center;
+   appearance: none;
+   background-color: #FCFCFD;
+   border-radius: 4px;
+   border-width: 0;
+   box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+   box-sizing: border-box;
+   color: #36395A;
+   cursor: pointer;
+   display: inline-flex;
+   font-family: "JetBrains Mono", monospace;
+   height: 48px;
+   justify-content: center;
+   line-height: 1;
+   list-style: none;
+   overflow: hidden;
+   padding-left: 16px;
+   padding-right: 16px;
+   position: relative;
+   text-align: left;
+   text-decoration: none;
+   transition: box-shadow .15s, transform .15s;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   white-space: nowrap;
+   will-change: box-shadow, transform;
+   font-size: 18px;
 
-.zone {
+ }
 
-  width: 80px;
-  font-family: "JetBrains Mono", monospace;
-  cursor: pointer;
-  text-align: center;
-  outline-color: rgb(16, 16, 245);
-  border-radius: 9px;
-  font-size: large;
+ button:focus {
 
+   box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
 
+ }
 
-}
+ button:hover {
 
-.zone:hover {
+   box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+   transform: translateY(-2px);
+ }
 
-  box-shadow: 0 0 10px rgb(113, 129, 247), 0 0 40px rgb(107, 123, 240), 0 0 80px rgb(82, 97, 235);
-  transition: 0.4s ease-in-out;
-  border-radius: 25px;
-}
+ button:active {
 
+   box-shadow: #D6D6E7 0 3px 7px inset;
+   transform: translateY(2px);
+ }
 
-.setbtn {
+ .alarm-inputs,
+ #alarm-text {
 
-  align-items: center;
-  appearance: none;
-  background-color: #FCFCFD;
-  border-radius: 4px;
-  border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #36395A;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono", monospace;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
-  transition: box-shadow .15s, transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
-  font-size: 18px;
+   margin-bottom: 30px;
 
-}
+ }
 
-.setbtn:focus {
+ #active-alarm {
 
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+   display: none;
 
-}
+ }
 
-.setbtn:hover {
+ input[type='number'] {
 
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  transform: translateY(-2px);
-}
+   width: 80px;
+   font-family: "JetBrains Mono", monospace;
+   cursor: pointer;
+   text-align: center;
+   outline-color: rgb(16, 16, 245);
+   border-radius: 9px;
+   font-size: medium;
 
-.setbtn:active {
+ }
 
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
-}
+ input[type='number']:hover {
 
+   background: whitesmoke;
+   box-shadow: 0 0 10px rgb(113, 129, 247), 0 0 40px rgb(107, 123, 240), 0 0 80px rgb(82, 97, 235);
+   transition: 0.4s ease-in-out;
+   border-radius: 25px;
 
-.stopbtn {
+ }
 
-  align-items: center;
-  appearance: none;
-  background-color: #FCFCFD;
-  border-radius: 4px;
-  border-width: 0;
-  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  box-sizing: border-box;
-  color: #36395A;
-  cursor: pointer;
-  display: inline-flex;
-  font-family: "JetBrains Mono", monospace;
-  height: 48px;
-  justify-content: center;
-  line-height: 1;
-  list-style: none;
-  overflow: hidden;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative;
-  text-align: left;
-  text-decoration: none;
-  transition: box-shadow .15s, transform .15s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  will-change: box-shadow, transform;
-  font-size: 18px;
+ .zone {
 
-}
+   width: 80px;
+   font-family: "JetBrains Mono", monospace;
+   cursor: pointer;
+   text-align: center;
+   outline-color: rgb(16, 16, 245);
+   border-radius: 9px;
+   font-size: large;
 
-.stopbtn:focus {
+ }
 
-  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+ .zone:hover {
 
-}
+   box-shadow: 0 0 10px rgb(113, 129, 247), 0 0 40px rgb(107, 123, 240), 0 0 80px rgb(82, 97, 235);
+   transition: 0.4s ease-in-out;
+   border-radius: 25px;
 
-.stopbtn:hover {
-
-  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  transform: translateY(-2px);
-  background-color: rgb(248, 103, 103);
-
-}
-
-
-.stopbtn:active {
-
-  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);
-
-} */
-
-body {
-  font-family: monaco;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-#current-time {
-  font-size: 32px;
-}
-#current-time,
-.create-alarm,
-h1,
-#active-alarm {
-  text-align: center;
-}
-.create-alarm,
-.alarm-inputs,
-#active-alarm {
-  margin-top: 20px;
-}
-input {
-  width: 100px;
-  height: 30px;
-}
-.alarm-inputs,
-#alarm-text {
-  margin-bottom: 30px;
-}
-button {
-  font-size: 18px;
-}
-#active-alarm {
-  display: none;
-}
+ }
